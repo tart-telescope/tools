@@ -6,14 +6,22 @@ Containerized tools for using the TART radio telescope. This repository creates 
 * disko: Discrete Sky Operator imaging. Ideal for working with wide-field TART data.
 * disko_draw: Draw and visualize discrete fields of view
 * All of the tart_tools python package.
-** tart_download_data
+* * tart_download_data
+* *
 
-## Create an alias called tart_tools
+## Build The Tools
+
+Currently the tools require [apptainer/singularity](https://apptainer.org/) to be installed, do this on your system, and then
 
     make build
+
+### Create an alias called tart_tools
+
     alias tart_tools='apptainer run /home/tim/tart-telescope/tools/tart_tools.sif'
 
-## Using
+## Using tart_tools
+
+The
 
     tart_tools tart_download_data --vis --api https://api.elec.ac.nz/tart/mu-udm --n 1
 
