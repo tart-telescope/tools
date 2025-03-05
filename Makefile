@@ -10,5 +10,5 @@ build:
 	APPTAINER_TMPDIR=~/tmp apptainer build --fakeroot ${CONTAINER}.sif Singularity.def
 
 docker:
-	docker build .
-	docker exec
+	docker build -t tart_tools .
+	docker run -i -t tart_tools tart2ms --help

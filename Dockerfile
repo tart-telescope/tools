@@ -27,7 +27,8 @@ RUN . /opt/venv/bin/activate && pip3 install "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-deps tart_tools
 RUN . /opt/venv/bin/activate && pip3 install tart2ms disko
 
-CMD /bin/bash
+ENV PATH="/opt/venv/bin:${PATH}"
+# CMD [ "/bin/bash", ]
 # %environment
 #   export PATH=/opt/venv/bin:$PATH
 #
