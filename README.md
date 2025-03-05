@@ -4,7 +4,24 @@ Containerized tools for using the TART radio telescope. This repository creates 
 
 * tart2ms: Create and manipulate measurement sets from TART data
 * disko: Discrete Sky Operator imaging. Ideal for working with wide-field TART data.
+* disko_draw: Draw and visualize discrete fields of view
 * All of the tart_tools python package.
+** tart_download_data
+
+## Using
+
+    tart_tools tart_download_data --vis --api https://api.elec.ac.nz/tart/mu-udm --n 1
+
+    tart_tools tart2ms --hdf vis_2025-03-05_13_04_41.765325.hdf --ms udm.ms
+    
+    tart_tools disko --ms udm.ms --healpix --fov 170deg --res 30arcmin  --lasso --alpha 0.003 --HDF tart_udm_image.h5
+
+### Draw sources on the image
+
+    tart_tools disko_draw --show-sources --SVG tart_udm_image.svg tart_udm_image.h5
+    convert tart_udm_image.svg img/tart_udm_image.jpg
+    
+![TART radio image](img/tart_udm_image.jpg)
 
 ## Building
 
