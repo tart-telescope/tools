@@ -12,9 +12,9 @@ Containerized tools for using the TART radio telescope. This repository creates 
 
     tart_tools tart_download_data --vis --api https://api.elec.ac.nz/tart/mu-udm --n 1
 
-    tart_tools tart2ms --hdf vis_2025-03-05_13_04_41.765325.hdf --ms udm.ms
+    tart_tools tart2ms --hdf vis_2025-03-05_13_04_41.765325.hdf --single-field --rephase obs-midpoint --ms udm.ms
     
-    tart_tools disko --ms udm.ms --healpix --fov 170deg --res 30arcmin  --lasso --alpha 0.003 --HDF tart_udm_image.h5
+    tart_tools disko --ms udm.ms --nvis 10000 --healpix --fov 170deg --res 30arcmin  --lasso --alpha 0.003 --HDF tart_udm_image.h5
 
 ### Draw sources on the image
 
