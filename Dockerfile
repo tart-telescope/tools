@@ -19,13 +19,14 @@ RUN apt-get install -y cython3
 
 RUN rm -rf /var/lib/apt/lists/*
 
+ENV PYTHONDONTWRITEBYTECODE=1
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 
-RUN . /opt/venv/bin/activate && pip3 install --no-deps tart  # --no-deps to avoid depending on h5py
-RUN . /opt/venv/bin/activate && pip3 install "minio<=7.1"
-RUN . /opt/venv/bin/activate && pip3 install --no-deps tart_tools
-RUN . /opt/venv/bin/activate && pip3 install tart2ms disko
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart  # --no-deps to avoid depending on h5py
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile tart2ms disko
 
 ENV PATH="/opt/venv/bin:${PATH}"
 # CMD [ "/bin/bash", ]
