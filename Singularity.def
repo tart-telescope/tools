@@ -1,6 +1,6 @@
 Bootstrap: docker
 From: debian:11
-Stage: spython-base
+Stage: tools-base
 
 %labels
 Maintainer: Tim Molteno "tim@elec.ac.nz"
