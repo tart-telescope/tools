@@ -18,13 +18,22 @@ Currently the tools require [apptainer/singularity](https://apptainer.org/) to b
 
     make build
 
+Now each of the tools can be run by prefixing the command with ```apptainer run tart_tools.sif``` ie:
+
+    apptainer run tart_tools.sif tart_download_data --help
+    
 ### Create an alias called tart_tools
 
     alias tart_tools='apptainer run /home/tim/tart-telescope/tools/tart_tools.sif'
 
-## Using tart_tools
+The tart_tools alias allows each tool to be run quite simply, just prefix each command with tart_tools. ie.
 
-The tart_tools alias allows each tool to be run. See the following example:
+    tart_tools tart_download_data --help
+    tart_tools tart2ms --help
+
+## Imaging using the TART telescope tools
+
+The tart_tools alias allows each tool to be run quite simply. See the following example:
 
 First download some data
 
