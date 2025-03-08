@@ -2,11 +2,11 @@
 
 Containerized tools for using the TART radio telescope. This repository creates a TART tools container. It is recommended that this container be used using apptainer (or singularity). The tools available are
 
-* tart2ms: Create and manipulate measurement sets from TART data
+* [tart2ms](https://github.com/tart-telescope/tart2ms): Create and manipulate measurement sets from TART data
 * [disko](https://github.com/tmolteno/disko): Discrete Sky Operator imaging. Ideal for working with wide-field TART data.
 * disko_draw: Draw and visualize discrete fields of view
 * [spotless](https://github.com/tmolteno/spotless): Model fitting imaging direct from visibilities. Create a sky model direct from visibilities. 
-* All of the tart_tools python package.
+* All of the [tart_tools](https://github.com/tmolteno/tart_modules/tree/main/tart_tools) python package.
 * * tart_download_data
 * * tart_upload_antenna_positions etc.
 
