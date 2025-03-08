@@ -27,6 +27,7 @@ RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-de
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile tart2ms disko
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless
 
 ENV PATH="/opt/venv/bin:${PATH}"
 # CMD [ "/bin/bash", ]

@@ -20,7 +20,8 @@ Maintainer: Tim Molteno "tim@elec.ac.nz"
 
     python3 -m venv /app/venv
     cd /app
-    /app/venv/bin/pip install tart2ms tart_tools tart disko
+    /app/venv/bin/pip install --no-cache-dir --no-compile tart2ms tart_tools tart disko
+    /app/venv/bin/pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless
 
 
 %environment
