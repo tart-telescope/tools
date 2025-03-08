@@ -1,5 +1,6 @@
 FROM debian:bookworm
 LABEL Maintainer="Tim Molteno tim@elec.ac.nz"
+LABEL org.opencontainers.image.description="TART radio telescope tools"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # debian setup
