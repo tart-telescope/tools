@@ -57,18 +57,19 @@ Then convert the image to a JPG.
     
 ![TART radio image](img/tart_udm_image.jpg)
 
-## Building
+## Using Docker
 
-For the moment, you can build locally. The command
+The docker image for TART tools is public (the apptainer image is based on it). You can run it directly in docker
 
-    make build
+    docker run -it ghcr.io/tart-telescope/tools tart2ms --help 
 
-Will create an apptainer application tart_tools.sif that can run any of the commands.
+to run this on local files, you will need to mount the necessary directories.
 
 ## ToDo
 
-* Put the container on docker hub.
+* Stimela2 definitions for commands
 
 ## Changelog
 
 * March 2025. Initial commit.
+* 8 March. Move to public container on ghcr.io
