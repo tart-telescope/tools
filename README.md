@@ -1,6 +1,8 @@
 # TART telescope tools
 
-Containerized tools for using the TART radio telescope. This repository creates a TART tools container. It is recommended that this container be used using apptainer (or singularity). The tools available are
+Containerized tools for using the TART radio telescope. This repository creates a TART tools container. It is recommended that this container be used using apptainer (or singularity) which requires Linux or recent versions of Windows. They can also be used with docker on all platforms (but some filesystem mounting is required).
+
+The tools available are:
 
 * [tart2ms](https://github.com/tart-telescope/tart2ms): Create and manipulate measurement sets from TART data
 * [disko](https://github.com/tmolteno/disko): Discrete Sky Operator imaging. Ideal for working with wide-field TART data.
