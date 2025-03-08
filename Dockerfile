@@ -16,7 +16,7 @@ RUN apt-get update -y && apt-get install -y \
     python3-pandas python3-gmsh \
     python3-dask python3-healpy
 
-RUN apt-get install -y cython3
+RUN apt-get install -y cython3 wsclean
 
 RUN rm -rf /var/lib/apt/lists/*
 

@@ -1,0 +1,4 @@
+Bootstrap: docker
+From: ghcr.io/tart-telescope/tools:latest
+%runscript
+  "$@"

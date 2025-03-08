@@ -7,7 +7,7 @@ alias:
 	echo "alias tart_tools='apptainer run ${PWD}/${CONTAINER}.sif'"
 build:
 	mkdir -p ~/tmp
-	APPTAINER_TMPDIR=~/tmp apptainer build --fakeroot ${CONTAINER}.sif Singularity.def
+	APPTAINER_TMPDIR=~/tmp apptainer build --fakeroot ${CONTAINER}.sif tart_tools.def
 
 docker:
 	docker build -t tart_tools .
