@@ -1,7 +1,9 @@
 CONTAINER=tart_tools
 PWD=`pwd`
-test:
-	apptainer run ${CONTAINER}.sif tart2ms --help
+
+TEST_CMD=tart2ms --hdf /test/vis_2025-03-09_06_26_46.859046.hdf --ms test/test.ms --clobber
+testap:
+	apptainer run ${CONTAINER}.sif ${TEST_CMD}
 
 alias:
 	echo "alias tart_tools='apptainer run ${PWD}/${CONTAINER}.sif'"
@@ -11,4 +13,6 @@ build:
 
 docker:
 	docker build -t tart_tools .
-	docker run -i -t tart_tools tart2ms --help
+
+testd:
+	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools tart2ms --hdf /test/vis_2025-03-09_06_26_46.859046.hdf --ms /test/test.ms --clobber
