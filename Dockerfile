@@ -27,15 +27,8 @@ RUN python3 -m venv $VIRTUAL_ENV
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart  # --no-deps to avoid depending on h5py
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms@master
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko@v1.0.1
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms#v0.6.0b7
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git#v1.0.3
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git#v0.5.1
 
 ENV PATH="/opt/venv/bin:${PATH}"
-# CMD [ "/bin/bash", ]
-# %environment
-#   export PATH=/opt/venv/bin:$PATH
-#
-# %runscript
-#   "$@"
-
