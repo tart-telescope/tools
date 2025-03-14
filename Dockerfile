@@ -21,6 +21,7 @@ RUN apt-get install -y cython3 wsclean
 RUN rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONDONTWRITEBYTECODE=1
+ENV OPENBLAS_NUM_THREADS=1
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 
