@@ -15,4 +15,7 @@ docker:
 	docker build -t tart_tools .
 
 testd:
-	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools tart2ms --hdf /test/vis_2025-03-09_06_26_46.859046.hdf --ms /test/test.ms --clobber
+	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools tart2ms \
+		--hdf /test/vis_2025-03-09_06_26_46.859046.hdf \
+		--add-model \
+		--ms /test/test.ms --clobber
