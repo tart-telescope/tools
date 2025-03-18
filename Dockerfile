@@ -16,19 +16,19 @@ RUN apt-get update -y && apt-get install -y \
     python3-pandas python3-gmsh \
     python3-dask python3-healpy
 
-RUN apt-get install -y cython3 wsclean
+RUN apt-get install -y cython3
 
 RUN rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONDONTWRITEBYTECODE=1
-ENV OPENBLAS_NUM_THREADS=1
+# ENV OPENBLAS_NUM_THREADS=1
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart  # --no-deps to avoid depending on h5py
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms#v0.6.0b7
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms#v0.7.0rc1
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git#v1.0.3
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git#v0.5.1
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile codex-africanus
