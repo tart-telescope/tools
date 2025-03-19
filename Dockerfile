@@ -28,7 +28,7 @@ RUN . /opt/venv/bin/activate && pip3 install --upgrade pip
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart  # --no-deps to avoid depending on h5py
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile 'git+https://github.com/tart-telescope/tart2ms#v0.7.0rc1[predict]'
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile tart2ms[predict]
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
 ENV PATH="/opt/venv/bin:${PATH}"
