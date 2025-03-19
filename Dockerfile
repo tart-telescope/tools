@@ -1,22 +1,20 @@
-FROM python:3.11-bookworm
+FROM debian:bookworm
 LABEL Maintainer="Tim Molteno tim@elec.ac.nz"
 LABEL org.opencontainers.image.description="TART radio telescope tools"
 ARG DEBIAN_FRONTEND=noninteractive
 
-# # debian setup
-# RUN apt-get update -y && apt-get install -y \
-#     curl \
-#     pkg-config \
-#     python3-venv python3-setuptools \
-#     python3-dev python3-wheel python3-pkgconfig \
-#     python3-cffi libffi-dev libhdf5-dev \
-#     python3-numpy python3-scipy \
-#     python3-matplotlib \
-#     python3-h5py python3-astropy \
-#     python3-pandas python3-gmsh \
-#     python3-dask python3-healpy
-#
-RUN apt-get update && apt-get install -y libgl1
+# debian setup
+RUN apt-get update -y && apt-get install -y \
+    curl \
+    pkg-config \
+    python3-venv python3-setuptools \
+    python3-dev python3-wheel python3-pkgconfig \
+    python3-cffi libffi-dev libhdf5-dev \
+    python3-numpy python3-scipy \
+    python3-matplotlib \
+    python3-h5py python3-astropy \
+    python3-pandas python3-gmsh \
+    python3-dask python3-healpy
 # RUN apt-get install -y cython3
 #
 # RUN rm -rf /var/lib/apt/lists/*
