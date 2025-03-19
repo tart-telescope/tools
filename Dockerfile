@@ -16,6 +16,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 #     python3-pandas python3-gmsh \
 #     python3-dask python3-healpy
 #
+RUN apt-get update && apt-get install -y libgl1
 # RUN apt-get install -y cython3
 #
 # RUN rm -rf /var/lib/apt/lists/*
