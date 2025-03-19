@@ -19,3 +19,6 @@ testd:
 		--hdf /test/vis_2025-03-09_06_26_46.859046.hdf \
 		--add-model \
 		--ms /test/test.ms --clobber
+
+	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools disko \
+		--ms /test/test.ms --HDF test.hdf --healpix --fov 140deg --res 0.5deg
