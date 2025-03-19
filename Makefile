@@ -20,5 +20,6 @@ testd:
 		--add-model \
 		--ms /test/test.ms --clobber
 
+testdisko:
 	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools disko \
 		--ms /test/test.ms --HDF test.hdf --healpix --fov 140deg --res 0.5deg
