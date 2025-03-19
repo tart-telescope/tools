@@ -29,7 +29,7 @@ RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-de
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms#v0.7.0rc1
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git#v1.0.3
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git#v0.5.1
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git#v1.0.4
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git#v0.5.2
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile codex-africanus
 ENV PATH="/opt/venv/bin:${PATH}"
