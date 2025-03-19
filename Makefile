@@ -12,7 +12,7 @@ build:
 	APPTAINER_TMPDIR=~/tmp apptainer build --fakeroot ${CONTAINER}.sif tart_tools.def
 
 docker:
-	docker build progress=plain -t tart_tools .
+	docker build --progress=plain -t tart_tools .
 
 testd:
 	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools tart2ms \
