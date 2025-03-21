@@ -31,4 +31,5 @@ RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-de
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile tart2ms[predict]
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
 RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
+RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --upgrade astropy-iers-data
 ENV PATH="/opt/venv/bin:${PATH}"
