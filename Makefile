@@ -23,3 +23,7 @@ testd:
 testdisko:
 	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools disko \
 		--ms /test/test.ms --HDF /test/test.hdf --healpix --fov 140deg --res 0.5deg
+
+testspot:
+	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools spotless \
+		--ms /test/test.ms --HDF /test/test.hdf --healpix --fov 140deg --res 0.5deg

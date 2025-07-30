@@ -17,19 +17,17 @@ RUN apt-get update -y && apt-get install -y \
     python3-dask python3-healpy
 # RUN apt-get install -y cython3
 #
-# RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 #
 ENV PYTHONDONTWRITEBYTECODE=1
 # ENV OPENBLAS_NUM_THREADS=1
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN . /opt/venv/bin/activate && pip3 install --upgrade pip
-# RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart  # --no-deps to avoid depending on h5py
-# RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile "minio<=7.1"
-# RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --no-deps tart_tools
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms.git
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
-RUN . /opt/venv/bin/activate && pip3 install --no-cache-dir --no-compile --upgrade astropy-iers-data
-ENV PATH="/opt/venv/bin:${PATH}"
+ENV REDO=1
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms.git
+RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
+RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
+RUN pip install --no-cache-dir --no-compile --upgrade astropy-iers-data
