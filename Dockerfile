@@ -25,7 +25,7 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-ENV REDO=1
+ENV REDO=2
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms.git
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
