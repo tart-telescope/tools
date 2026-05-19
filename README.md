@@ -74,3 +74,4 @@ to run this on local files, you will need to mount the necessary directories.
 * March 2025. Initial commit.
 * 8 March. Move to public container on ghcr.io
 * 1.1.3. Add tart-gnss-acquire (github.com/tmolteno/tart-gnss).
+* 1.1.4. Update to fix a bug in tart-gnss-acquire with FFT buffer allocation on Beidou
