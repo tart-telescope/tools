@@ -1,4 +1,17 @@
-FROM debian:bookworm
+FROM debian:bookworm AS builder
+LABEL Maintainer="Tim Molteno tim@elec.ac.nz"
+LABEL org.opencontainers.image.description="TART radio telescope tools"
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && apt-get install -y curl build-essential
+
+WORKDIR /build
+RUN curl -o rustup.sh --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs
+RUN sh rustup.sh -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+RUN cargo install tart-gnss-acquire --root /usr/local
+
+FROM debian:bookworm AS runner
 LABEL Maintainer="Tim Molteno tim@elec.ac.nz"
 LABEL org.opencontainers.image.description="TART radio telescope tools"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -14,9 +27,10 @@ RUN apt-get update -y && apt-get install -y \
     python3-matplotlib \
     python3-h5py python3-astropy \
     python3-pandas python3-gmsh \
-    python3-dask python3-healpy
-# RUN apt-get install -y cython3
+    python3-dask
 #
+COPY --from=builder /usr/local/bin/tart-gnss-acquire /usr/bin/tart-gnss-acquire
+
 RUN rm -rf /var/lib/apt/lists/*
 #
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -31,3 +45,4 @@ RUN pip install --no-cache-dir --no-compile git+https://github.com/tart-telescop
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
 RUN pip install --no-cache-dir --no-compile --upgrade astropy-iers-data
+
