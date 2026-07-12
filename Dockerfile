@@ -49,5 +49,5 @@ ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 ENV REDO=1
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir "tart2ms>=0.9.0" "disko>=1.4.1" "spotless>=0.7.5"
+RUN pip install --no-cache-dir "tart2ms>=0.9.0" "disko>=1.4.2" "spotless>=0.7.5"
 RUN pip install --no-cache-dir --upgrade astropy-iers-data
