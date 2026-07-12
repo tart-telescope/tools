@@ -39,6 +39,7 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 ENV REDO=1
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tart-telescope/tart2ms.git
