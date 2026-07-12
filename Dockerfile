@@ -32,7 +32,7 @@ RUN apt-get update -y && apt-get install -y \
     python3-numpy python3-scipy \
     python3-matplotlib \
     python3-h5py python3-astropy \
-    python3-pandas python3-gmsh \
+    python3-pandas \
     python3-dask
 #
 COPY --from=builder /usr/local/bin/tart-gnss-acquire /usr/bin/tart-gnss-acquire
@@ -49,5 +49,5 @@ ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 ENV REDO=1
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir "tart2ms>=0.9.0" "disko>=1.4.2" "spotless>=0.7.5"
+RUN pip install --no-cache-dir "tart2ms>=0.9.0" "disko>=1.4.3" "spotless>=0.7.5"
 RUN pip install --no-cache-dir --upgrade astropy-iers-data
