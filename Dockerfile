@@ -49,5 +49,5 @@ ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 ENV REDO=1
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir --no-compile python-casacore tart2ms disko spotless
+RUN pip install --no-cache-dir --no-compile "python-casacore>=3.5.0" tart2ms disko spotless
 RUN pip install --no-cache-dir --no-compile --upgrade astropy-iers-data
