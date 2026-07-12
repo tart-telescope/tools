@@ -19,6 +19,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 # debian setup
 RUN apt-get update -y && apt-get install -y \
     curl \
+    casacore-dev \
+    gcc g++ \
+    libblas-dev liblapack-dev \
+    wcslib-dev libcfitsio-dev \
+    libboost-python-dev \
+    cmake ninja-build \
     pkg-config \
     python3-venv python3-setuptools \
     python3-dev python3-wheel python3-pkgconfig \
@@ -46,4 +52,3 @@ RUN pip install --no-cache-dir --no-compile git+https://github.com/tart-telescop
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/disko.git
 RUN pip install --no-cache-dir --no-compile git+https://github.com/tmolteno/spotless.git
 RUN pip install --no-cache-dir --no-compile --upgrade astropy-iers-data
-
