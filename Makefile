@@ -30,3 +30,15 @@ testspot:
 
 bash:
 	docker run --mount type=bind,source=./test,target=/test -i -t tart_tools /bin/bash
+
+test-imports:
+	docker run --mount type=bind,source=./test,target=/test -i tart_tools python -c \
+		"import tart2ms; import disko; import spotless; import tart_tools; print('All imports OK')"
+
+test-tart-tools:
+	docker run --mount type=bind,source=./test,target=/test -i tart_tools tart_calibrate --help
+	docker run --mount type=bind,source=./test,target=/test -i tart_tools tart_image --help
+	docker run --mount type=bind,source=./test,target=/test -i tart_tools tart_download_data --help
+	docker run --mount type=bind,source=./test,target=/test -i tart_tools tart_vis2json --help
+
+test-all: testd testdisko testspot test-imports test-tart-tools
