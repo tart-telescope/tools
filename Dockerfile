@@ -23,11 +23,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wcslib-dev libcfitsio-dev \
     libboost-python-dev \
     cmake ninja-build \
+    casacore-data \
     && rm -rf /var/lib/apt/lists/*
 #
 COPY --from=builder /usr/local/bin/tart-gnss-acquire /usr/bin/tart-gnss-acquire
 #
 ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 
-RUN pip install --no-cache-dir python-casacore "tart2ms>=0.9.0" "disko>=1.4.3" "spotless>=0.7.5"
-RUN pip install --no-cache-dir --upgrade astropy-iers-data
+RUN pip install --no-cache-dir python-casacore \
+            "tart2ms>=0.9.0" \
+            "disko>=1.4.3" \
+            "spotless>=0.7.5"
+RUN pip install --no-cache-dir --upgrade \
+            astropy-iers-data
