@@ -32,7 +32,7 @@ ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 
 RUN pip install --no-cache-dir python-casacore \
             "tart2ms>=0.9.2" \
-            "disko>=1.4.3" \
+            "disko>=1.4.4" \
             "spotless>=0.7.5" \
             "tart_tools >= 1.4.5"
 RUN pip install --no-cache-dir --upgrade \
