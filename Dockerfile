@@ -31,9 +31,9 @@ COPY --from=builder /usr/local/bin/tart-gnss-acquire /usr/bin/tart-gnss-acquire
 ENV CMAKE_ARGS="-DCMAKE_CXX_STANDARD=17"
 
 RUN pip install --no-cache-dir python-casacore \
-            "tart2ms>=0.9.2" \
+            "tart2ms>=0.9.3" \
             "disko>=1.4.4" \
-            "spotless>=0.7.5" \
-            "tart_tools >= 1.4.5"
+            "spotless>=0.8.0" \
+            "tart_tools >= 1.4.6"
 RUN pip install --no-cache-dir --upgrade \
             astropy-iers-data
