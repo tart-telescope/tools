@@ -65,6 +65,17 @@ The docker image for TART tools is public (the apptainer image is based on it). 
 
 to run this on local files, you will need to mount the necessary directories.
 
+## Releasing
+
+The image version is a git tag: pushing `v*.*.*` builds amd64 and arm64 and
+pushes `ghcr.io/tart-telescope/tools:<tag>` to GHCR. Cut releases with
+`invoke release` — add `--disko-version=X.Y.Z` to verify that disko release is
+on PyPI and pin it exactly — as described in [RELEASE.md](RELEASE.md). This is
+normally a stage of disko's
+[release chain](https://github.com/tmolteno/disko/blob/master/RELEASE.md), and
+tart_cargo consumes the resulting tag (see its
+[RELEASE.md](https://github.com/tart-telescope/tart_cargo/blob/main/RELEASE.md)).
+
 ## ToDo
 
 * Stimela2 definitions for commands
