@@ -69,11 +69,13 @@ to run this on local files, you will need to mount the necessary directories.
 
 The image version is a git tag: pushing `v*.*.*` builds amd64 and arm64 and
 pushes `ghcr.io/tart-telescope/tools:<tag>` to GHCR. Cut releases with
-`invoke release` — add `--disko-version=X.Y.Z` to verify that disko release is
-on PyPI and pin it exactly — as described in [RELEASE.md](RELEASE.md). This is
-normally a stage of disko's
-[release chain](https://github.com/tmolteno/disko/blob/master/RELEASE.md), and
-tart_cargo consumes the resulting tag (see its
+`invoke -r ../tart_cargo tools-release` — the same invoke script that
+releases tart_cargo controls this release too: it builds the image
+**locally**, tests it with that script's stimela gates, then tags. Add
+`--disko-version=X.Y.Z` to verify that disko release is on PyPI and pin it
+exactly — as described in [RELEASE.md](RELEASE.md). This is normally a stage
+of disko's [release chain](https://github.com/tmolteno/disko/blob/master/RELEASE.md),
+and tart_cargo consumes the resulting tag (see its
 [RELEASE.md](https://github.com/tart-telescope/tart_cargo/blob/main/RELEASE.md)).
 
 ## ToDo
