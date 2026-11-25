@@ -18,7 +18,10 @@ jobs:
           - arch: amd64
             runs-on: ubuntu-latest
           - arch: arm64
-            runs-on: [self-hosted, linux, arm64]
+            # GitHub-hosted arm64 (free for public repos). Was the
+            # self-hosted [self-hosted, linux, arm64] runner — it sat queued
+            # for hours on 2026-11-25 while offline and blocked the release.
+            runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
       packages: write
